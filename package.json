@@ -23,7 +23,8 @@
     "http": "0.0.0",
     "mocha": "^3.1.2",
     "mongodb": "^2.2.10",
-    "mongoose": "^4.6.2"
+    "mongoose": "^4.6.2",
+    "sinon": "^1.17.6"
   },
   "devDependencies": {
     "nodemon": "^1.10.2"
