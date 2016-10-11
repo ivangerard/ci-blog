@@ -33,7 +33,8 @@ describe("Post Blogs", function() {
             .field('contributor', 'h2123')
             .field('comments', 'Helo123')
             .end(function(err, result) {
-                expect(result).to.have.status(200);
+                //expect(result).to.have.status(200);
+                result.should.have.status(200);
                 done()
             })
     });
@@ -51,7 +52,8 @@ describe("Get Blog", function() {
                 expect(res.body[0]).to.include.keys('article')
                 expect(res.body[0]).to.include.keys('contributor')
                     //expect(res.body[0]).to.include.keys('comments')
-                expect(res).to.have.status(200);
+                    //expect(res).to.have.status(200);
+                res.should.have.status(200);
                 done()
             })
 
