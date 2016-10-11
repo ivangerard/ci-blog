@@ -4,7 +4,7 @@
   "description": "All about Ivan Gerard",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -w"
+    "test": "mocha ./test/*test.js"
   },
   "author": "Ivan Gerard <me@ivangerard.com>",
   "license": "ISC",
