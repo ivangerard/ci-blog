@@ -5,6 +5,7 @@ var chai = require('chai'),
     chaiHttp = require('chai-http');
 
 chai.use(chaiHttp);
+chai.should()
 
 var sinon = require('sinon');
 var expect = chai.expect;
@@ -31,7 +32,7 @@ describe("Post Blogs", function() {
             .post('/api/blogs')
             .field('article', 'Hi')
             .field('contributor', 'h2123')
-            .field('comments', 'Helo123')
+            // .field('comments', 'Helo123')
             .end(function(err, result) {
                 //expect(result).to.have.status(200);
                 result.should.have.status(200);
