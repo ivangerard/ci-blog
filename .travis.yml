@@ -3,6 +3,6 @@ node_js:
   - "6.6.0"
 before_script:
   - npm install
-  - node server.js &
+  - node ./server/server.js &
 script:
   - npm test
