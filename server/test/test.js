@@ -30,11 +30,13 @@ describe("Post Blogs", function() {
         // insert some data
         chai.request('http://localhost:8080')
             .post('/api/blogs')
-            .field('article', 'Hi')
-            .field('contributor', 'h2123')
-            .field('comments', 'Helo123')
+            .send({
+                "article": "Hi",
+                "contributor": "ivan",
+                "comments": "halo"
+            })
             .end(function(err, result) {
-                //expect(result).to.have.status(200);
+                expect(result).to.have.status(200);
                 //        result.should.have.status(200);
                 done()
             })
@@ -50,9 +52,9 @@ describe("Get Blog", function() {
             .get('/')
             .end(function(err, res) {
                 expect(res).to.be.json
-                expect(res.body[0]).to.include.keys('article')
-                expect(res.body[0]).to.include.keys('contributor')
-                expect(res.body[0]).to.include.keys('comments')
+                expect(res.body[res.body.length - 1]).to.include.keys('article')
+                expect(res.body[res.body.length - 1]).to.include.keys('contributor')
+                expect(res.body[res.body.length - 1]).to.include.keys('comments')
                 expect(res).to.have.status(200);
                 //res.should.have.status(200);
                 done()

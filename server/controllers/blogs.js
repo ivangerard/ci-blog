@@ -8,28 +8,30 @@ module.exports = {
 }
 
 function insert(req, res, next) {
-
+    console.log("ini input dari test", req.body)
     var blogs = new Blogs({
         article: req.body.article,
         contributor: req.body.contributor,
-        comments: req.body.comments,
+        comments: req.body.comments
     })
 
     blogs.save((err) => {
+        console.log("==========")
+        console.log(req.body.article)
         if (err)
             throw err
         res.json(blogs)
-        console.log(blogs);
+            // console.log(blogs);
     })
 
 }
+
 
 function displays(req, res) {
     Blogs.find({}, (err, results) => {
         res.json(results)
     })
 }
-
 
 function update(req, res) {
 
