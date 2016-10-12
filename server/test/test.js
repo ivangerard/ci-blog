@@ -52,8 +52,8 @@ describe("Get Blog", function() {
                 expect(res).to.be.json
                 expect(res.body[0]).to.include.keys('article')
                 expect(res.body[0]).to.include.keys('contributor')
-                    //expect(res.body[0]).to.include.keys('comments')
-                    //expect(res).to.have.status(200);
+                expect(res.body[0]).to.include.keys('comments')
+                expect(res).to.have.status(200);
                 res.should.have.status(200);
                 done()
             })
